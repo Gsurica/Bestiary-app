@@ -16,5 +16,8 @@ class MonsterRepository private constructor() {
         }
 
     }
+    fun save() {
+
+    }
 
 }
