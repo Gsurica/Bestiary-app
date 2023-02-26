@@ -1,14 +1,18 @@
 package com.example.bestiary.repository
 
-class MonsterRepository private constructor() {
+import android.content.Context
+
+class MonsterRepository private constructor(context: Context) {
+
+    private val monsterDatabase = MonsterDataBase(context)
 
     companion object {
         private lateinit var repository: MonsterRepository
 
-        fun getInstance(): MonsterRepository {
+        fun getInstance(context: Context): MonsterRepository {
 
             if (!Companion::repository.isInitialized) {
-                repository = MonsterRepository()
+                repository = MonsterRepository(context)
             }
 
             return repository
@@ -16,8 +20,10 @@ class MonsterRepository private constructor() {
         }
 
     }
-    fun save() {
+    fun insert() {
+    }
 
+    fun update() {
     }
 
 }
