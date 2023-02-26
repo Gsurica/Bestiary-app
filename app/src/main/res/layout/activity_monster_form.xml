@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    tools:context=".view.MonsterFormActivity">
+
+    <TextView
+        android:textSize="32dp"
+        android:text="@string/register_your_monsters"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/monster_name"
+        android:id="@+id/monster_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monster_form"
+        android:background="@color/black"
+        android:id="@+id/view_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp" />
+
+    <EditText
+        android:padding="8dp"
+        android:hint="@string/monster_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/monster_name"
+        android:layout_width="0dp"
+        android:layout_height="50dp" />
+
+    <RadioGroup
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monster_name"
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monster_name"
+            android:text="@string/used_radio_button"
+            android:id="@+id/radio_button_used"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            app:layout_constraintStart_toEndOf="@id/radio_button_used"
+            app:layout_constraintTop_toBottomOf="@id/monster_name"
+            android:text="@string/unused_radio_button"
+            android:id="@+id/radio_button_unused"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <Button
+        android:paddingEnd="32dp"
+        android:paddingStart="32dp"
+        android:text="@string/register_monster_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group"
+        android:id="@+id/register_monster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

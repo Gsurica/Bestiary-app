@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Bestiary</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_all_monsters">All monsters</string>
+    <string name="menu_used_monsters">Used Monsters</string>
+    <string name="menu_unused_monsters">Unused Monters</string>
+    <string name="monster_name">Monster\'s name</string>
+    <string name="register_your_monsters">Register your monsters!</string>
+    <string name="used_radio_button">Used</string>
+    <string name="unused_radio_button">Unused</string>
+    <string name="register_monster_button">Register</string>
+</resources>
