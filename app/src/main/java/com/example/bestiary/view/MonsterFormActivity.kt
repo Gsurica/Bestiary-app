@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.bestiary.MonsterFormViewModel
 import com.example.bestiary.R
 import com.example.bestiary.databinding.ActivityMonsterFormBinding
+import com.example.bestiary.model.MonsterModel
 
 class MonsterFormActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -27,8 +28,15 @@ class MonsterFormActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view.id == R.id.register_monster) {
-            
+            handleInsertMonster()
         }
+    }
+
+    private fun handleInsertMonster() {
+        val name = _binding.monsterName.text.toString()
+        val used = _binding.radioButtonUsed.isChecked
+
+        _viewModel.insert(MonsterModel(0, name, used))
     }
 
     private fun setListerners() {
