@@ -15,27 +15,32 @@ class AllMonsters : Fragment() {
     private var _binding: FragmentAllMonstersBinding? = null
 
     private val binding get() = _binding!!
-
+    private lateinit var viewModel: AllMonsterViewModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val viewModel =
-            ViewModelProvider(this).get(AllMonsterViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AllMonsterViewModel::class.java)
 
         _binding = FragmentAllMonstersBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        viewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        viewModel.getAll()
+
+        observe()
+
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun observe() {
+        viewModel.allMonsters.observe(viewLifecycleOwner) {
+            val s = ""
+        }
     }
 }

@@ -1,13 +1,21 @@
 package com.example.bestiary.viewModel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.bestiary.model.MonsterModel
+import com.example.bestiary.repository.MonsterRepository
 
-class AllMonsterViewModel : ViewModel() {
+class AllMonsterViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val listAllMonsters = MutableLiveData<List<MonsterModel>>()
+    private val repository = MonsterRepository.getInstance(application)
+
+    val allMonsters: LiveData<List<MonsterModel>> = listAllMonsters
+
+    fun getAll() {
+        listAllMonsters.value = repository.getAll()
     }
-    val text: LiveData<String> = _text
 }

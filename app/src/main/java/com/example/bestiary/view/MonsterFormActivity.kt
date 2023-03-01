@@ -3,11 +3,13 @@ package com.example.bestiary.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.bestiary.MonsterFormViewModel
 import com.example.bestiary.R
 import com.example.bestiary.databinding.ActivityMonsterFormBinding
 import com.example.bestiary.model.MonsterModel
+import com.google.android.material.snackbar.Snackbar
 
 class MonsterFormActivity : AppCompatActivity(), View.OnClickListener {
 

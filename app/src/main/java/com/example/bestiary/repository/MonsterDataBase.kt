@@ -3,6 +3,7 @@ package com.example.bestiary.repository
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.bestiary.constants.DataBaseConstants
 
 
 class MonsterDataBase(context: Context) : SQLiteOpenHelper(context, NAME, null, VERSION) {
@@ -13,7 +14,7 @@ class MonsterDataBase(context: Context) : SQLiteOpenHelper(context, NAME, null, 
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL(/* sql = */ "CREATE TABLE Monster (id integer primary key autoincrement, name text, used integer)")
+        db.execSQL("CREATE TABLE " + DataBaseConstants.MONSTER.TABLE_NAME + " (" + DataBaseConstants.MONSTER.COLUMNS.ID + " integer primary key autoincrement, " + DataBaseConstants.MONSTER.COLUMNS.NAME + " text, " + DataBaseConstants.MONSTER.COLUMNS.USED + " integer);")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
